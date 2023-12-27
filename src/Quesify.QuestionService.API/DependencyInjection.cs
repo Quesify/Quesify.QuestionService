@@ -37,7 +37,6 @@ public static class DependencyInjection
         {
             options.SwaggerDoc("v1", new OpenApiInfo { Title = "Quesify.QuestionService.API", Version = "v1" });
             options.AddSecurity();
-            options.DocumentFilter<LowercaseDocumentFilter>();
             options.AddLowercaseDocumentFilter();
         });
 
