@@ -5,6 +5,7 @@ using Quesify.SharedKernel.AspNetCore.Swagger.Filters;
 using Quesify.SharedKernel.Utilities.Guards;
 using Serilog;
 using Serilog.Events;
+using Steeltoe.Discovery.Client;
 using System.Reflection;
 using System.Text.Json.Serialization;
 
@@ -67,6 +68,8 @@ public static class DependencyInjection
         services.AddHttpContextCurrentPrincipalAccessor();
 
         services.AddCustomExceptionHandler();
+
+        services.AddDiscoveryClient(configuration);
 
         return services;
     }
